@@ -1,10 +1,7 @@
 <form [formGroup]="form">
-  <select formControlName="source" (change)="vote(true)">
+  <select formControlName="source" (change)="onChange($event.target.selectedIndex)">
     <option *ngFor="let source of sources" [ngValue]="source">
       {{ source.name }}
     </option>
   </select>
 </form>
-
-<p>Form value: {{ form.value | json }}</p> 
-<!-- {state: {name: 'New York', abbrev: 'NY'} } -->

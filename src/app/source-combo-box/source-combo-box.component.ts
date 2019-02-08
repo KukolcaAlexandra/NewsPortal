@@ -1,6 +1,6 @@
-import { Component, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { SOURCES } from '../mock-news-sources';
+import { SOURCES, ISource } from '../mock-news-sources';
 //import { EventEmitter } from 'protractor';
 
 /*interface OnChanges {
@@ -14,18 +14,21 @@ import { SOURCES } from '../mock-news-sources';
   styleUrls: ['./source-combo-box.component.css']
 })
 export class SourceComboBoxComponent implements OnInit {
-  @Output() voted = new EventEmitter<boolean>();
-  didVote = false;
+  @Output() selectedSource = new EventEmitter<number>();
+  //currentSource: ISource;
+  sources: ISource[] = SOURCES;
 
-  vote(agreed: boolean) {
-    this.voted.emit(agreed);
-    this.didVote = true;
-    console.log('vote');
+  onChange(sourceIndex: number) {
+    console.log(sourceIndex);
+    //this.currentSource = this.sources[sourceIndex];
+    this.selectedSource.emit(sourceIndex);
+    
+    //console.log(this.currentSource);
   }
   //@Output() outputSourceName: EventEmitter<string> = new EventEmitter();
   
   //Output() onChanged: EventEmitter<boolean> = new EventEmitter();
-  sources = SOURCES;
+  
 
 	//change(increased:any) {
 	//	this.onChanged.emit(increased);
@@ -39,7 +42,7 @@ export class SourceComboBoxComponent implements OnInit {
   ];*/
 
   form = new FormGroup({
-    source: new FormControl(this.sources[0]),
+    source: new FormControl(/*this.sources[0]*/),
   });
 
   /*form.source.registerOnChange((newValue: any, ...) => {

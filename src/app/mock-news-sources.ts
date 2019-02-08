@@ -1,4 +1,4 @@
-interface ISources {
+export interface ISource {
   id: string;
   name: string;
   description: string;
@@ -6,7 +6,7 @@ interface ISources {
   category: string;
 }
 
-export const SOURCES: ISources[] = [
+export const SOURCES: ISource[] = [
   {
     id: "abc-news",
     name: "ABC News",

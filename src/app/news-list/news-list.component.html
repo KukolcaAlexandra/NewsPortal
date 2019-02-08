@@ -1,0 +1,6 @@
+<div class="container">
+  <div *ngFor="let item of newsList" class='news-container'>
+    <app-news [news]="item"></app-news>
+  </div>
+  <button *ngIf="newsList && newsList.length">Load More</button>
+</div>

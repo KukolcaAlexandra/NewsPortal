@@ -6,13 +6,17 @@ import { TitleComponent } from './title/title.component';
 import { ControlPanelComponent } from './control-panel/control-panel.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SourceComboBoxComponent } from './source-combo-box/source-combo-box.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     ControlPanelComponent,
-    SourceComboBoxComponent
+    SourceComboBoxComponent,
+    NewsListComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,

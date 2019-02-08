@@ -1,0 +1,45 @@
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+.news-block {
+  width: 100%;
+	display: flex;
+  padding: 10px;
+  margin: 10px 15px;
+  border: 1px solid black;
+}
+
+.title-block {
+	display: flex;
+	align-items: flex-start;
+	flex-grow: 1;
+}
+.image {
+	width: 100px;
+}
+.title {
+	display: inline-block;
+	margin-top: 0px;
+	margin-left: 10px;
+}
+.date-block {
+	font-size: 12px;
+	font-weight: 700;
+	margin-left: 10px;
+}
+.description-block {
+	flex-grow: 10;
+}
+.description {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.link-block {
+	color: DodgerBlue;
+	flex-grow: 1;
+}
+a {
+  color: DodgerBlue;
+}
