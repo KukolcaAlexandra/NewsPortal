@@ -2,5 +2,6 @@ select {
   width: 150px;
   height: 25px;
   border-radius: 3px;
-  border: 1px solid black;
+  border: 1px solid #ddd;
+  margin-right: 40px;
 }

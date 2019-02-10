@@ -15,11 +15,11 @@ export class ControlPanelComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleEvent(event: number) {
+  handleEvent(sourceId: number) {
     console.log('control panel');
-    console.log(event);
+    console.log(sourceId);
     //this.currentSource = event;
-    this.selectedSource.emit(event);
+    this.selectedSource.emit(sourceId);
   }
 
   /*onChange(sourceIndex: number) {

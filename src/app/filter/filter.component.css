@@ -1,0 +1,15 @@
+input {
+  width: 150px;
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  margin-right: 3px;
+}
+
+button {
+  width: 100px;
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  margin-right: 60px;
+}

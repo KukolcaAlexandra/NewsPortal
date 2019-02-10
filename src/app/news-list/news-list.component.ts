@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { INews, NEWS } from '../mock-news';
+import { INews } from '../interfaces/news';
+import { NEWS } from '../mock-news';
 
 @Component({
   selector: 'app-news-list',
@@ -8,6 +9,7 @@ import { INews, NEWS } from '../mock-news';
 })
 export class NewsListComponent implements OnInit {
   @Input() newsList: INews[] = NEWS[0];
+  @Input() source: string;
   constructor() { }
 
   ngOnInit() {

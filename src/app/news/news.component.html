@@ -1,15 +1,19 @@
-<div class="title-block">
+<div class="news-block" (click)="redirectToDescription(news)" routerLink="news/{{news.source.id}}">
   <img class="image" [src]="news.urlToImage">
-  <div class="title-date">
+  <div class="text-block">
     <h3 class="title">{{news.title}}</h3>
-    <div class="date-block">{{news.publishedAt}}
-    </div>
     <div class="description-block">
       <p class="description">{{news.description}}</p>
     </div>
     <div class="link-block">
-      <a [href]="news.url" target="_blank">read more</a>
+      <a [href]="news.url" target="_blank" class="read-more">read more</a>
     </div>
   </div>
+  <div class="date-block">{{news.publishedAt}}
+  </div>
+  <div *ngIf="checkSource()">
+    Local
+  </div>
 </div>
+
 

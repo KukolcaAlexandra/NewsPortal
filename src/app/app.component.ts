@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ISource, SOURCES } from './mock-news-sources';
-import { INews, NEWS } from './mock-news';
+import { INews } from './interfaces/news';
+import { NEWS } from './mock-news';
 
 @Component({
   selector: 'app-root',
