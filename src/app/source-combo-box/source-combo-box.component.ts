@@ -1,6 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SOURCES, ISource } from '../mock-news-sources';
+import { NgControl } from '@angular/forms';
 //import { ISource } from '../interfaces/news';
 //import { EventEmitter } from 'protractor';
 
@@ -16,6 +17,13 @@ import { SOURCES, ISource } from '../mock-news-sources';
 })
 export class SourceComboBoxComponent implements OnInit {
   @Output() selectedSource = new EventEmitter<number>();
+  @Input() disableComboBox: boolean;
+  @Input() set disableControl( condition : boolean ) {
+    //const action = condition ? 'disable' : 'enable';
+    //this.ngControl.control[action]();
+    console.log('disableControl');
+  }
+  
   //currentSource: ISource;
   sources: ISource[] = SOURCES;
   //currentSelect:any;
@@ -25,6 +33,7 @@ export class SourceComboBoxComponent implements OnInit {
     console.log(selectedIndex);
     //this.currentSelect = sourceIndex;
     this.selectedSource.emit(selectedIndex);
+    //this.comboBox.disable();
   }
  
   onClick(event: any) {
@@ -32,7 +41,7 @@ export class SourceComboBoxComponent implements OnInit {
     console.log(event);
   }
 
-  comboBox = new FormControl();
+  comboBox = new FormControl({disabled: true});
   /*form = new FormGroup({
     source: new FormControl(0 this.sources[0]),
   });*/

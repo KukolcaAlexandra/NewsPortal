@@ -1,6 +1,7 @@
+
 <div class="container">
   <app-source-combo-box (selectedSource)="handleEvent($event);"></app-source-combo-box>
   <app-filter></app-filter>
-  <app-checkbox></app-checkbox>
+  <app-checkbox (localSource)="onCheck($event);"></app-checkbox>
   <button>Add Article</button>
 </div>

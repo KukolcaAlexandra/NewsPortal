@@ -3,15 +3,6 @@ import { INews } from './interfaces/news';
 export const NEWS: INews[][] = [
   [
     {
-      author: "Me",
-      source: {id: "local", name: "Local News"},
-      title: "Staff member shot at Baltimore high school, adult suspect in custody: Officials",
-      url: "https://abcnews.go.com/US/staff-member-shot-baltimore-high-school-adult-suspect/story?id=60935243",
-      urlToImage: "https://s.abcnews.com/images/US/frederick-douglass-high-school-maryland-google-street-view-ht-jc-190208_hpMain_16x9_992.jpg",
-    },
-  ],
-  [
-    {
       author: "Emily Shapiro",
       content: null,
       description: "Students and the remaining staff members are safe, the officials said.",
@@ -160,4 +151,14 @@ export const NEWS: INews[][] = [
       urlToImage: "http://www.ansa.it/webimages/img_700/2019/2/8/901cabe282b2e70aaf32894b570294e9.jpg",
     }
   ]
+];
+
+export const LOCAL_NEWS: INews[] = [
+  {
+    author: "Me",
+    source: {id: "local", name: "Local News"},
+    title: "Staff member shot at Baltimore high school, adult suspect in custody: Officials",
+    url: "https://abcnews.go.com/US/staff-member-shot-baltimore-high-school-adult-suspect/story?id=60935243",
+    urlToImage: "https://s.abcnews.com/images/US/frederick-douglass-high-school-maryland-google-street-view-ht-jc-190208_hpMain_16x9_992.jpg",
+  },
 ];

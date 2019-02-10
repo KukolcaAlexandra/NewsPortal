@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ISource, SOURCES } from '../mock-news-sources';
 import { INews } from '../interfaces/news';
-import { NEWS } from '../mock-news';
+import { NEWS, LOCAL_NEWS } from '../mock-news';
 
 
 @Component({
@@ -18,9 +18,11 @@ export class MainComponent implements OnInit {
   sourceName: string;// = sources[0].name;
   news: INews[][];
   currentNews: INews[];
+  localSource: INews[];
 
   ngOnInit() {
     this.sources = SOURCES;
+    this.localSource = LOCAL_NEWS;
     //this.currentSource = this.sources[0];
     this.sourceName = 'Source Name'; //this.sources[0].name;
     this.news = NEWS;
@@ -37,16 +39,24 @@ export class MainComponent implements OnInit {
     this.currentNews = this.news[sourceIndex-1];
     console.log(this.currentNews);
     //console.log(this.currentSource);
-    if (sourceIndex === 1) {
-      this.sourceName = "Local";
-    } else {
-      this.currentSource = this.sources[sourceIndex-2];
-      this.sourceName = this.currentSource.name;
-    }
+    this.currentSource = this.sources[sourceIndex-1];
+    this.sourceName = this.currentSource.name;
     //this.selectedSource.emit(this.currentSource);
     
     //console.log(this.currentSource);
     //this.currentNews = this.news[sourceIndex-2];
     //console.log(this.currentNews);
+  }
+
+  onCheck(checked: boolean) {
+    console.log('main component');
+    console.log(checked);
+    if (checked) {
+      this.sourceName = "Local";
+      this.currentNews = this.localSource;
+    } else {
+      this.sourceName = "Source Name";
+      this.currentNews = [];
+    }
   }
 }

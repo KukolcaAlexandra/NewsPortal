@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -7,12 +7,18 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./checkbox.component.css']
 })
 export class CheckboxComponent implements OnInit {
-  
-  checkbox = new FormControl({ label: 'Label1', selected: true});
+  @Output() localSource = new EventEmitter<boolean>();
+
+  checkbox = new FormControl();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClick(checked: boolean) {
+    console.log('click on checkbox');
+    console.log(checked);
+    this.localSource.emit(checked);
+  }
 }

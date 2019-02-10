@@ -1,4 +1,4 @@
 <div class="container">
-  <input type="checkbox" name="active" ngModel required id="mynews" name="mynews">
+  <input type="checkbox" name="active" ngModel required id="mynews" name="mynews" (click)="onClick($event.target.checked)">
   <label for="mynews">Only created by me</label>
 </div>
