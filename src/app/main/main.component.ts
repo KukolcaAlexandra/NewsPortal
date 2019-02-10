@@ -13,50 +13,46 @@ import { NEWS, LOCAL_NEWS } from '../mock-news';
 export class MainComponent implements OnInit {
 
   title = 'newsPortal';
-  sources: ISource[];// = SOURCES;
+  sources: ISource[];
   currentSource: ISource;
-  sourceName: string;// = sources[0].name;
+  sourceName: string;
   news: INews[][];
   currentNews: INews[];
   localSource: INews[];
+  currentIndex: number;
+  showLoadButton: boolean = false;
 
   ngOnInit() {
     this.sources = SOURCES;
     this.localSource = LOCAL_NEWS;
-    //this.currentSource = this.sources[0];
-    this.sourceName = 'Source Name'; //this.sources[0].name;
+    this.sourceName = 'Source Name'; 
     this.news = NEWS;
-    //this.
   }
 
   handleEvent(sourceIndex: number) {
-    console.log('app component');
-    //console.log(event);
-    //this.currentSource = event;
-    //this.selectedSource.emit(event);
-    //this.currentSource = this.sources[sourceIndex-2];
-    console.log(sourceIndex);
-    this.currentNews = this.news[sourceIndex-1];
-    console.log(this.currentNews);
-    //console.log(this.currentSource);
-    this.currentSource = this.sources[sourceIndex-1];
+    this.currentIndex = sourceIndex - 1;
+    this.currentNews = this.news[this.currentIndex];
+    this.currentSource = this.sources[this.currentIndex];
     this.sourceName = this.currentSource.name;
-    //this.selectedSource.emit(this.currentSource);
-    
-    //console.log(this.currentSource);
-    //this.currentNews = this.news[sourceIndex-2];
-    //console.log(this.currentNews);
+    this.showLoadButton = true;
   }
 
   onCheck(checked: boolean) {
-    console.log('main component');
-    console.log(checked);
     if (checked) {
       this.sourceName = "Local";
       this.currentNews = this.localSource;
+      this.showLoadButton = false;
     } else {
-      this.sourceName = "Source Name";
-      this.currentNews = [];
+      if (this.currentIndex) {
+        this.currentNews = this.news[this.currentIndex];
+        this.currentSource = this.sources[this.currentIndex];
+        this.sourceName = this.currentSource.name;
+        this.showLoadButton = true;
+      } else {
+        this.sourceName = "Source Name";
+        this.currentNews = [];
+        this.showLoadButton = false;
+      }
     }
   }
 }

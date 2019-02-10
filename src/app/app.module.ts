@@ -13,10 +13,15 @@ import { MainComponent } from './main/main.component';
 import { FilterComponent } from './filter/filter.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { FormsModule }   from '@angular/forms';
+import { FullNewsComponent } from './full-news/full-news.component';
+import { EditNewsComponent } from './edit-news/edit-news.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 const AppRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'news/:id', component: NewsDetailsComponent},
+  {path: 'add', component: EditNewsComponent},
+  {path: 'edit/:id', component: EditNewsComponent},
 ];
 
 @NgModule({
@@ -29,7 +34,10 @@ const AppRoutes: Routes = [
     NewsDetailsComponent,
     MainComponent,
     FilterComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    FullNewsComponent,
+    EditNewsComponent,
+    EditFormComponent,
   ],
   imports: [
     RouterModule.forRoot(AppRoutes),

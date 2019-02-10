@@ -2,17 +2,13 @@
   width: 100%;
 	display: flex;
 	flex-direction: row;
-  //padding: 10px;
-  //margin: 10px 15px;
-	//border: 1px solid black;
-	background-color: white;
+  background-color: white;
 	padding: 10px;
 }
 
 .image {
 	width: 100px;
 	align-self: flex-start;
-  //height: 100px;
 }
 
 .text-block {
@@ -20,39 +16,22 @@
 	display: flex;
 	flex-direction: column;
 	margin-left: 15px;
-  //padding: 10px;
-  //margin: 10px 15px;
-  //border: 1px solid black;
 }
-
-/*.news-block {
-	display: flex;
-	align-items: flex-start;
-	flex-grow: 1;
-	//margin-bottom: 20px;
-	background-color: white;
-	height: 100px;
-}*/
 
 .title {
 	display: inline-block;
 	margin-top: 0px;
-	//margin-left: 10px;
 }
+
 .date-block {
 	font-size: 12px;
 	font-weight: 700;
-	//margin-left: 10px;
 	width: 200px;
 }
-.description-block {
-	//width: 100%;
-	//height: 20px;
-}
+
 .description {
 	margin-top: 5px;
 	margin-bottom: 5px;
-	//width: 50%;
 	white-space: nowrap;
   overflow: hidden;
 	text-overflow: ellipsis;
@@ -64,4 +43,12 @@
 
 .read-more {
   color: DodgerBlue;
+}
+
+button {
+	width: 70px;
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+	margin-bottom: 5px;
 }

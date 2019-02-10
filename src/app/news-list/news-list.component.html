@@ -1,6 +1,6 @@
-<div class="container">
-  <div *ngFor="let item of newsList" class='news-container'>
+<div class="container" (change)="onChange()">
+  <div *ngFor="let item of newsList; let ind = index" class='news-container'>
     <app-news [news]="item" [source]="source"></app-news>
   </div>
-  <button *ngIf="newsList && newsList.length">Load More</button>
+  <button *ngIf="newsList && newsList.length && showLoadButton" (click)="onLoadClick()">Load More</button>
 </div>

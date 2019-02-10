@@ -1,6 +1,6 @@
-<div class="news-block" (click)="redirectToDescription(news)" routerLink="news/{{news.source.id}}">
+<div class="news-block">
   <img class="image" [src]="news.urlToImage">
-  <div class="text-block">
+  <div class="text-block" routerLink="news/{{news.source.name}}">
     <h3 class="title">{{news.title}}</h3>
     <div class="description-block">
       <p class="description">{{news.description}}</p>
@@ -12,8 +12,9 @@
   <div class="date-block">{{news.publishedAt}}
   </div>
   <div *ngIf="checkSource()">
-    Local
+    <div class=button-group>
+      <button routerLink="edit/{{news.source.name}}">Edit</button>
+      <button (click)="deleteNews(news)">Delete</button>
+    </div>
   </div>
 </div>
-
-

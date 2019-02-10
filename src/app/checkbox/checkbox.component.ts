@@ -17,8 +17,6 @@ export class CheckboxComponent implements OnInit {
   }
 
   onClick(checked: boolean) {
-    console.log('click on checkbox');
-    console.log(checked);
     this.localSource.emit(checked);
   }
 }
