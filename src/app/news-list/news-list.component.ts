@@ -14,7 +14,7 @@ export class NewsListComponent implements OnInit {
   showList: boolean = true;
   constructor() { }
 
-  ngOnInit() { console.log('init news list'); console.log(this.source);}
+  ngOnInit() {}
 
   onLoadClick() {
     this.newsList = [...this.newsList, ...ADD_NEWS];

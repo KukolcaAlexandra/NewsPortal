@@ -1,5 +1,5 @@
 .news-block {
-  width: 700px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   background-color: white;
@@ -13,7 +13,7 @@
 }
   
 .text-block {
-  width: 100%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin-left: 15px;
@@ -51,4 +51,9 @@ button {
   border-radius: 3px;
   border: 1px solid #ddd;
   margin-bottom: 5px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
 }

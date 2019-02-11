@@ -13,17 +13,37 @@ export class ControlPanelComponent implements OnInit {
   
   sources: ISource[] = SOURCES;
   
-  onChange(selectedIndex: number) {
-    this.selectedSource.emit(selectedIndex);
-  }
- 
-  form = new FormGroup({
+  /*form = new FormGroup({
     comboBox: new FormControl({disabled: true}),
-  });
+  });*/
+
   
   constructor() { }
 
+  /*newsForm = new FormGroup({
+    heading: new FormControl(''),
+    comboBox: new FormControl({disabled: true}),
+    inputKeyWord: new FormControl(''),
+    checkMyNews: new FormControl(''),
+    image: new FormControl(''),
+    date: new FormControl(''),
+    author: new FormControl(''),
+    sourceUrl: new FormControl(''),
+  });*/
+  heading = new FormControl('');
+  comboBox = new FormControl({disabled: true});
+  inputKeyWord = new FormControl('');
+  checkMyNews = new FormControl('');
+  image = new FormControl('');
+  date = new FormControl('');
+  author = new FormControl('');
+  sourceUrl = new FormControl('');
+
   ngOnInit() {
+  }
+
+  onChange(selectedIndex: number) {
+    this.selectedSource.emit(selectedIndex);
   }
 
   handleEvent(sourceId: number) {
@@ -32,5 +52,18 @@ export class ControlPanelComponent implements OnInit {
 
   onCheck(checked: boolean) {
     this.localSource.emit(checked);
+  }
+
+  onFilterClick() {
+    console.log('filter');
+  }
+
+  onCheckMyNews(checked: boolean) {
+    this.localSource.emit(checked);
+    if (checked) {
+      this.comboBox.disable();
+    } else {
+      this.comboBox.enable();
+    }
   }
 }

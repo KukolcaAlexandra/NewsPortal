@@ -39,7 +39,7 @@ label {
 .buttonGroup {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 textarea {
@@ -47,9 +47,8 @@ textarea {
 }
 
 button {
-  width: 100px;
+  width: 120px;
   height: 25px;
   border-radius: 5px;
   border: none;
-  background-color: gray;
 }

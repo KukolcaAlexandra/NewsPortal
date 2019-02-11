@@ -45,6 +45,11 @@
   color: DodgerBlue;
 }
 
+.button-group {
+	display: flex;
+	flex-direction: column;
+}
+
 button {
 	width: 70px;
   height: 25px;
